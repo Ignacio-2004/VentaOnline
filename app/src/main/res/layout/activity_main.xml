@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/MainBttOffe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -20,23 +20,38 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/MainBttHome"
             android:layout_width="wrap_content"
             android:layout_height="73dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
             android:layout_weight="1"
             android:text="Home" />
+
+        <Button
+            android:id="@+id/MainBttLan"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
+            android:layout_weight="1"
+            android:text="Lenguage" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="73dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
             android:layout_weight="1"
             android:text="Offers" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/MainBttBas"
             android:layout_width="wrap_content"
             android:layout_height="73dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
             android:layout_weight="1"
             android:text="Basket" />
     </LinearLayout>
@@ -55,7 +70,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/MainiTxtUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8px"
@@ -64,7 +79,7 @@
             android:textSize="34sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/MainBttLog"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -72,13 +87,12 @@
     </LinearLayout>
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -90,37 +104,23 @@
             android:layout_marginBottom="4px">
 
             <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
+                android:id="@+id/MainTxtProd1"
+                android:layout_width="129dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16px"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/MainBttAdd1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="2"
+                android:text="Add" />
 
         </TableRow>
 
@@ -131,37 +131,23 @@
             android:layout_marginBottom="4px">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/MainTxtProd2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16px"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/MainBttAdd2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="2"
+                android:text="Add" />
         </TableRow>
 
         <TableRow
@@ -171,37 +157,23 @@
             android:layout_marginBottom="4px">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/MainTxtProd3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16px"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/MainBttAdd3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Button
-                android:id="@+id/button19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="2"
+                android:text="Add" />
 
         </TableRow>
 
@@ -212,37 +184,23 @@
             android:layout_marginBottom="4px">
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/MainTxtProd4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16px"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button21"
+                android:id="@+id/MainBttAdd4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Button
-                android:id="@+id/button20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="2"
+                android:text="Add" />
 
         </TableRow>
 
@@ -253,37 +211,23 @@
             android:layout_marginBottom="4px">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/MainTxtProd5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16px"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button23"
+                android:id="@+id/MainBttAdd5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Button
-                android:id="@+id/button22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="2"
+                android:text="Add" />
 
         </TableRow>
 
@@ -294,37 +238,23 @@
             android:layout_marginBottom="4px">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/MainTxtProd6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16px"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button25"
+                android:id="@+id/MainBttAdd6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <Button
-                android:id="@+id/button24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="2"
+                android:text="Add" />
         </TableRow>
 
         <TableRow
@@ -334,37 +264,75 @@
             android:layout_marginBottom="4px">
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/MainTxtProd7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16px"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button27"
+                android:id="@+id/MainBttAdd7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="2"
+                android:text="Add" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/MainTxtAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_weight="2"
+                android:text="0"
+                android:textSize="34sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/button26"
+                android:id="@+id/MainBttSubsAmou"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_height="match_parent"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:onClick="substr"
+                android:text="-"
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/MainBttPlusAmou"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+" />
+                android:layout_height="match_parent"
+                android:layout_span="1"
+                android:layout_weight="1"
+                android:onClick="plus"
+                android:text="+"
+                android:textSize="20sp" />
         </TableRow>
     </TableLayout>
 

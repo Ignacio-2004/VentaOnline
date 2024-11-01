@@ -2,12 +2,14 @@ package com.dam2.ventaonline.objects;
 
 public class Product {
 
-    String id;
-    String name;
+    private String id;
+    private String  name;
+    private double cost;
 
-    public Product(String id, String name) {
+    public Product(String id, String name,double cost) {
         this.id = id;
-        this.name = name;
+        this.name = name.trim();
+        this.cost = cost;
     }
 
     public String getId() {
@@ -24,5 +26,13 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 }
