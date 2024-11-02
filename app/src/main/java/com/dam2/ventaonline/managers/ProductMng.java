@@ -45,6 +45,21 @@ public class ProductMng {
         return false;
     }
 
+    /**
+     * Return a Product of the list
+     * @param pos the position of the product
+     * @return Product
+     */
+    public Product getProduct (int pos){
+
+        return listProducts().get(pos);
+
+    }
+
+    /**
+     * Return the list of Products
+     * @return list of Products
+     */
     public ArrayList<Product> listProducts(){
 
         return products;
