@@ -1,14 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">VentaOnline</string>
     <string name="moneyIcon">€</string>
-    <string name="creatina_creature">Creatina Excell</string>
+    <string name="creatina_creature">Creatina Creature</string>
     <string name="creatina_vegana">Creatina Vegana</string>
     <string name="proteina_isoweight">Proteina Isoweight</string>
     <string name="proteina_clearweight">Proteina Clearweight</string>
     <string name="proteina_vegana">Proteina Vegana</string>
     <string name="preworkout_monstrack">Preworkout Monstrack</string>
     <string name="preworkout_black_blood">Preworkout Black Blood</string>
-    <string name="msgButtonPress">"Añadido a la cesta "</string>
-    <string name="ErrorAddBkt0">Cantidad 0</string>
-    <string name="basketcontentXML" translatable="false">BasketContent</string>
+    <string name="msgButtonPress">Añadido a la cesta</string>
+    <string name="ErrorAddBkt0">No se ha selecionado la cantidad</string>
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="moneyIcon">$</string>
+    <string name="creatina_creature">Excell creatine</string>
+    <string name="creatina_vegana">Vegan creatine</string>
+    <string name="proteina_isoweight">Isoweight protein</string>
+    <string name="proteina_clearweight">Clearweight protein</string>
+    <string name="proteina_vegana">Vegan protein</string>
+    <string name="preworkout_monstrack">Monstrack preworkout</string>
+    <string name="preworkout_black_blood">Black Blood preworkout</string>
+    <string name="msgButtonPress">Added to the basket</string>
+    <string name="ErrorAddBkt0">The amount of product is 0</string>
+</resources>

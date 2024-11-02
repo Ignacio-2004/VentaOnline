@@ -1,5 +1,6 @@
 package com.dam2.ventaonline;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        xmlMngBkst = new XMLMng(this,"BasketContent");
+
+        xmlMngBkst = new XMLMng(this,getString(R.string.basketcontentXML));
 
         /*Initialise the view of amount of products to add*/
         textAmount("0");
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         pm.addProduct( new Product("PW00001",getString(R.string.preworkout_monstrack),45.00));
         pm.addProduct( new Product("PW00006",getString(R.string.preworkout_black_blood),30.99));
 
-        initProdTxt(pm);
+        initProdTxt();
 
     }
 
@@ -107,7 +109,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void initProdTxt(ProductMng pm){
+    public void initBasket(View view){
+
+        Intent i = new Intent(this,Basket.class);
+        startActivity(i);
+
+    }
+
+    private void initProdTxt(){
 
         ArrayList<Product>products = pm.listProducts();
 

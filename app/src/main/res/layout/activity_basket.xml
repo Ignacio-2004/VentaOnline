@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Basket">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4px"
+            android:layout_marginBottom="4px">
+
+            <TextView
+                android:id="@+id/BktTxtProd1"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="4"
+                android:text="Product"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BktAmount1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4px"
+                android:layout_marginEnd="4px"
+                android:layout_weight="2"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4px"
+            android:layout_marginBottom="4px">
+
+            <TextView
+                android:id="@+id/BktTxtProd2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="4"
+                android:text="Product"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BktAmount2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4px"
+                android:layout_marginEnd="4px"
+                android:layout_weight="2"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4px"
+            android:layout_marginBottom="4px">
+
+            <TextView
+                android:id="@+id/BktTxtProd3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="4"
+                android:text="Product"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BktAmount3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4px"
+                android:layout_marginEnd="4px"
+                android:layout_weight="2"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4px"
+            android:layout_marginBottom="4px">
+
+            <TextView
+                android:id="@+id/BktTxtProd4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="4"
+                android:text="Product"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BktAmount4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4px"
+                android:layout_marginEnd="4px"
+                android:layout_weight="2"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4px"
+            android:layout_marginBottom="4px">
+
+            <TextView
+                android:id="@+id/BktTxtProd5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="4"
+                android:text="Product"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BktAmount5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4px"
+                android:layout_marginEnd="4px"
+                android:layout_weight="2"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4px"
+            android:layout_marginBottom="4px">
+
+            <TextView
+                android:id="@+id/BktTxtProd6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="4"
+                android:text="Product"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BktAmount6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4px"
+                android:layout_marginEnd="4px"
+                android:layout_weight="2"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4px"
+            android:layout_marginBottom="4px">
+
+            <TextView
+                android:id="@+id/BktTxtProd7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4px"
+                android:layout_marginRight="4px"
+                android:layout_weight="4"
+                android:text="Product"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/BktAmount7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4px"
+                android:layout_marginEnd="4px"
+                android:layout_weight="2"
+                android:text="0"
+                android:textAlignment="viewEnd"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="409dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/MainBttHome"
+            android:layout_width="wrap_content"
+            android:layout_height="73dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
+            android:layout_weight="1"
+            android:onClick="home"
+            android:text="Home" />
+
+        <Button
+            android:id="@+id/MainBttLan"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
+            android:layout_weight="1"
+            android:text="Lenguage" />
+
+        <Button
+            android:id="@+id/BktClear"
+            android:layout_width="wrap_content"
+            android:layout_height="73dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
+            android:layout_weight="1"
+            android:onClick="clear"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/BktBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="73dp"
+            android:layout_marginLeft="4px"
+            android:layout_marginEnd="4px"
+            android:layout_weight="1"
+            android:text="Buy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="407dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/MainiTxtUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8px"
+            android:layout_weight="3"
+            android:text="Tu cesta"
+            android:textSize="34sp" />
+
+        <Button
+            android:id="@+id/MainBttLog"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="LogIn" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
