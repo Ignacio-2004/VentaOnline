@@ -13,7 +13,7 @@
         android:theme="@style/Theme.VentaOnline"
         tools:targetApi="31" >
         <activity
-            android:name=".managers.Activity_LogIn"
+            android:name=".Activity_LogIn"
             android:exported="false" />
         <activity
             android:name=".Basket"

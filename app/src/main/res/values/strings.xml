@@ -24,4 +24,17 @@
     <string name="subsAmount" translatable="false">-</string>
     <string name="ceroTxt" translatable="false">0</string>
     <string name="addBttXml">Add</string>
+    <string name="LogInTxtUser">User</string>
+    <string name="LogInTxtPassword">Password</string>
+    <string name="LogInBttLogIn">Log In</string>
+    <string name="LogInETxtName">Nombre</string>
+    <string name="LogInETxtPasswor">Contraseña</string>
+    <string name="XMLusrprefPref" translatable="false">UsrPref</string>
+    <string name="LogInETxtExceptionMsg">Ambos campos tienen que estar completos</string>
+    <string name="LogInTxtExceptionEmpty">Datos erronos</string>
+    <string name="BktTxtTu_cesta">Tu cesta</string>
+    <string name="BktBttlogin">LogIn</string>
+    <string name="BktBtthome">Home</string>
+    <string name="BktBttclear">Clear</string>
+    <string name="BktBttbuy">Buy</string>
 </resources>

@@ -17,4 +17,9 @@
     <string name="hi_userTxt">Hi, User</string>
     <string name="loginBttTxt">LogIn</string>
     <string name="addBttXml">Add</string>
+    <string name="LogInTxtUser">User</string>
+    <string name="LogInTxtPassword">Password</string>
+    <string name="LogInBttLogIn">Log In</string>
+    <string name="LogInETxtName">Name</string>
+    <string name="LogInETxtPasswor">Password</string>
 </resources>

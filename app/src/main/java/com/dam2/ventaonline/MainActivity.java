@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private final ProductMng PM = new ProductMng();
     private XMLMng xmlMngBkst;
     private LenguageMng lm;
+    private XMLMng xmlMngUsr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        xmlMngUsr = new XMLMng(this,getString(R.string.XMLusrprefPref));
         xmlMngBkst = new XMLMng(this,getString(R.string.basketcontentXML));
+
+        /*Init Usr*/
+        initUsr();
 
         /*Initialise the view of amount of products to add*/
         textAmount("0");
@@ -173,4 +178,12 @@ public class MainActivity extends AppCompatActivity {
     private String textAmount (){
         return (String) txtNum.getText();
     }
+
+    private void initUsr(){
+
+        xmlMngUsr.set("nacho","12345");
+        xmlMngUsr.set("alberto","67890");
+
+    }
+
 }

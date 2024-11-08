@@ -17,4 +17,9 @@
     <string name="hi_userTxt">Hola Usuario</string>
     <string name="loginBttTxt">Iniciar Sesión</string>
     <string name="addBttXml">Añadir</string>
+    <string name="LogInTxtUser">Usuario</string>
+    <string name="LogInTxtPassword">Contraseña</string>
+    <string name="LogInBttLogIn">"Iniciar sesion "</string>
+    <string name="LogInETxtName">Nombre</string>
+    <string name="LogInETxtPasswor">Contraseña</string>
 </resources>
