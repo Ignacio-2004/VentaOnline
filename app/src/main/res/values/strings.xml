@@ -11,4 +11,17 @@
     <string name="msgButtonPress">"Añadido a la cesta "</string>
     <string name="ErrorAddBkt0">Cantidad 0</string>
     <string name="basketcontentXML" translatable="false">BasketContent</string>
+    <string name="languageXMLTag" translatable="false">language</string>
+    <string name="languageXMLName" translatable="false">LanguagePref</string>
+    <string name="homeBttTxt">Home</string>
+    <string name="lenguageBttTxt">Lenguage</string>
+    <string name="offersBttTxt">Offers</string>
+    <string name="basketBttTxt">Basket</string>
+    <string name="hi_userTxt">Hi, User</string>
+    <string name="loginBttTxt">LogIn</string>
+    <string name="productTxt" translatable="false">Product</string>
+    <string name="plusAmount" translatable="false">+</string>
+    <string name="subsAmount" translatable="false">-</string>
+    <string name="ceroTxt" translatable="false">0</string>
+    <string name="addBttXml">Add</string>
 </resources>

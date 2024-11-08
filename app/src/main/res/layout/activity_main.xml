@@ -26,7 +26,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
-            android:text="Home" />
+            android:text="@string/homeBttTxt" />
 
         <Button
             android:id="@+id/MainBttLan"
@@ -35,7 +35,8 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
-            android:text="Lenguage" />
+            android:onClick="changeLanguage"
+            android:text="@string/lenguageBttTxt" />
 
         <Button
             android:id="@+id/BktClear"
@@ -44,7 +45,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
-            android:text="Offers" />
+            android:text="@string/offersBttTxt" />
 
         <Button
             android:id="@+id/BktBuy"
@@ -54,7 +55,7 @@
             android:layout_marginEnd="4px"
             android:layout_weight="1"
             android:onClick="initBasket"
-            android:text="Basket" />
+            android:text="@string/basketBttTxt" />
     </LinearLayout>
 
     <LinearLayout
@@ -76,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8px"
             android:layout_weight="3"
-            android:text="Hi, User"
+            android:text="@string/hi_userTxt"
             android:textSize="34sp" />
 
         <Button
@@ -84,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="LogIn" />
+            android:text="@string/loginBttTxt" />
     </LinearLayout>
 
     <TableLayout
@@ -111,7 +112,7 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
-                android:text="Product"
+                android:text="@string/productTxt"
                 android:textSize="20sp" />
 
             <Button
@@ -122,7 +123,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
                 android:onClick="addBkt"
-                android:text="Add" />
+                android:text="@string/addBttXml" />
 
         </TableRow>
 
@@ -139,7 +140,7 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
-                android:text="Product"
+                android:text="@string/productTxt"
                 android:textSize="20sp" />
 
             <Button
@@ -150,7 +151,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
                 android:onClick="addBkt"
-                android:text="Add" />
+                android:text="@string/addBttXml" />
         </TableRow>
 
         <TableRow
@@ -166,7 +167,7 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
-                android:text="Product"
+                android:text="@string/productTxt"
                 android:textSize="20sp" />
 
             <Button
@@ -177,7 +178,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
                 android:onClick="addBkt"
-                android:text="Add" />
+                android:text="@string/addBttXml" />
 
         </TableRow>
 
@@ -194,7 +195,7 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
-                android:text="Product"
+                android:text="@string/productTxt"
                 android:textSize="20sp" />
 
             <Button
@@ -205,7 +206,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
                 android:onClick="addBkt"
-                android:text="Add" />
+                android:text="@string/addBttXml" />
 
         </TableRow>
 
@@ -222,7 +223,7 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
-                android:text="Product"
+                android:text="@string/productTxt"
                 android:textSize="20sp" />
 
             <Button
@@ -233,7 +234,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
                 android:onClick="addBkt"
-                android:text="Add" />
+                android:text="@string/addBttXml" />
 
         </TableRow>
 
@@ -250,7 +251,7 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
-                android:text="Product"
+                android:text="@string/productTxt"
                 android:textSize="20sp" />
 
             <Button
@@ -261,7 +262,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
                 android:onClick="addBkt"
-                android:text="Add" />
+                android:text="@string/addBttXml" />
         </TableRow>
 
         <TableRow
@@ -277,7 +278,7 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
-                android:text="Product"
+                android:text="@string/productTxt"
                 android:textSize="20sp" />
 
             <Button
@@ -288,7 +289,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
                 android:onClick="addBkt"
-                android:text="Add" />
+                android:text="@string/addBttXml" />
 
         </TableRow>
 
@@ -314,7 +315,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="0"
+                android:text="@string/ceroTxt"
                 android:textSize="34sp" />
         </TableRow>
 
@@ -329,7 +330,7 @@
                 android:layout_span="1"
                 android:layout_weight="1"
                 android:onClick="substr"
-                android:text="-"
+                android:text="@string/subsAmount"
                 android:textSize="20sp" />
 
             <Button
@@ -339,7 +340,7 @@
                 android:layout_span="1"
                 android:layout_weight="1"
                 android:onClick="plus"
-                android:text="+"
+                android:text="@string/plusAmount"
                 android:textSize="20sp" />
         </TableRow>
     </TableLayout>

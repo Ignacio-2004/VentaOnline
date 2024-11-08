@@ -12,6 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.dam2.ventaonline.managers.LenguageMng;
 import com.dam2.ventaonline.managers.ProductMng;
 import com.dam2.ventaonline.managers.XMLMng;
 import com.dam2.ventaonline.objects.Product;
@@ -22,13 +23,19 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView txtNum;
     private TextView txtProd;
-    private ProductMng pm = new ProductMng();
+    private final ProductMng PM = new ProductMng();
     private XMLMng xmlMngBkst;
+    private LenguageMng lm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
+        lm = new LenguageMng(this,getString(R.string.languageXMLName));
+
+        lm.setLng(lm.getLng("es"),this,true);
+
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.MainBttOffe), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -43,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
         /*Initialise the products*/
 
-        pm.addProduct( new Product("CC00001",getString(R.string.creatina_creature),25.50));
-        pm.addProduct( new Product("CV00011",getString(R.string.creatina_vegana),20.99));
-        pm.addProduct( new Product("PI00001",getString(R.string.proteina_isoweight),40.99));
-        pm.addProduct( new Product("PC00011",getString(R.string.proteina_clearweight),50.50));
-        pm.addProduct( new Product("PV00101",getString(R.string.proteina_vegana),38.99));
-        pm.addProduct( new Product("PW00001",getString(R.string.preworkout_monstrack),45.00));
-        pm.addProduct( new Product("PW00006",getString(R.string.preworkout_black_blood),30.99));
+        PM.addProduct( new Product("CC00001",getString(R.string.creatina_creature),25.50));
+        PM.addProduct( new Product("CV00011",getString(R.string.creatina_vegana),20.99));
+        PM.addProduct( new Product("PI00001",getString(R.string.proteina_isoweight),40.99));
+        PM.addProduct( new Product("PC00011",getString(R.string.proteina_clearweight),50.50));
+        PM.addProduct( new Product("PV00101",getString(R.string.proteina_vegana),38.99));
+        PM.addProduct( new Product("PW00001",getString(R.string.preworkout_monstrack),45.00));
+        PM.addProduct( new Product("PW00006",getString(R.string.preworkout_black_blood),30.99));
 
         initProdTxt();
 
@@ -93,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if (view.getId()==bttId.get(i)){
 
-                    Toast.makeText(this,getString(R.string.msgButtonPress)+"( "+pm.getProduct(i).getId()+" )",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,getString(R.string.msgButtonPress)+"( "+ PM.getProduct(i).getId()+" )",Toast.LENGTH_LONG).show();
 
-                    xmlMngBkst.set(pm.getProduct(i).getId(),textAmount());
+                    xmlMngBkst.set(PM.getProduct(i).getId(),textAmount());
 
                 }
 
@@ -116,9 +123,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void changeLanguage(View view){
+
+        if (lm.getLng("es").equals("es")){
+
+            lm.setLng("en",this);
+
+        }else{
+
+            lm.setLng("es",this);
+
+        }
+
+    }
+
     private void initProdTxt(){
 
-        ArrayList<Product>products = pm.listProducts();
+        ArrayList<Product>products = PM.listProducts();
 
         txtProd= findViewById(R.id.MainTxtProd1);
         txtProd.setText(products.get(0).getName()+" ("+products.get(0).getCost()+getString(R.string.moneyIcon)+" )");
@@ -136,10 +157,10 @@ public class MainActivity extends AppCompatActivity {
         txtProd.setText(products.get(4).getName()+" ("+products.get(4).getCost()+getString(R.string.moneyIcon)+" )");
 
         txtProd= findViewById(R.id.MainTxtProd6);
-        txtProd.setText(products.get(5).getName()+" ("+products.get(5).getCost()+"€ )");
+        txtProd.setText(products.get(5).getName()+" ("+products.get(5).getCost()+getString(R.string.moneyIcon)+" )");
 
         txtProd= findViewById(R.id.MainTxtProd7);
-        txtProd.setText(products.get(6).getName()+" ("+products.get(6).getCost()+"€ )");
+        txtProd.setText(products.get(6).getName()+" ("+products.get(6).getCost()+getString(R.string.moneyIcon)+" )");
 
     }
 

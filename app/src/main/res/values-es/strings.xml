@@ -10,4 +10,11 @@
     <string name="preworkout_black_blood">Preworkout Black Blood</string>
     <string name="msgButtonPress">Añadido a la cesta</string>
     <string name="ErrorAddBkt0">No se ha selecionado la cantidad</string>
+    <string name="homeBttTxt">Inicio</string>
+    <string name="lenguageBttTxt">Idioma</string>
+    <string name="offersBttTxt">Ofertas</string>
+    <string name="basketBttTxt">Cesta</string>
+    <string name="hi_userTxt">Hola Usuario</string>
+    <string name="loginBttTxt">Iniciar Sesión</string>
+    <string name="addBttXml">Añadir</string>
 </resources>

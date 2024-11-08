@@ -11,6 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.dam2.ventaonline.managers.LenguageMng;
 import com.dam2.ventaonline.managers.ProductMng;
 import com.dam2.ventaonline.managers.XMLMng;
 import com.dam2.ventaonline.objects.Product;
@@ -22,11 +23,17 @@ public class Basket extends AppCompatActivity {
     private TextView txtProd;
     private ProductMng pm = new ProductMng();
     private XMLMng xmlMng ;
+    private LenguageMng lm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
+        lm = new LenguageMng(this,getString(R.string.languageXMLName));
+
+        lm.setLng(lm.getLng("es"),this,true);
+
         setContentView(R.layout.activity_basket);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -111,10 +118,10 @@ public class Basket extends AppCompatActivity {
         txtProd.setText(products.get(4).getName()+" ("+products.get(4).getCost()+getString(R.string.moneyIcon)+" )");
 
         txtProd= findViewById(R.id.BktTxtProd6);
-        txtProd.setText(products.get(5).getName()+" ("+products.get(5).getCost()+"€ )");
+        txtProd.setText(products.get(5).getName()+" ("+products.get(5).getCost()+getString(R.string.moneyIcon)+" )");
 
         txtProd= findViewById(R.id.BktTxtProd7);
-        txtProd.setText(products.get(6).getName()+" ("+products.get(6).getCost()+"€ )");
+        txtProd.setText(products.get(6).getName()+" ("+products.get(6).getCost()+getString(R.string.moneyIcon)+" )");
 
     }
 
@@ -142,6 +149,20 @@ public class Basket extends AppCompatActivity {
 
         txtProd= findViewById(R.id.BktAmount7);
         txtProd.setText(xmlMng.get(products.get(6).getId(),"0"));
+
+    }
+
+    public void changeLanguage(View view){
+
+        if (lm.getLng("es").equals("es")){
+
+            lm.setLng("en",this);
+
+        }else{
+
+            lm.setLng("es",this);
+
+        }
 
     }
 }

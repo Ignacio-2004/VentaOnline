@@ -252,6 +252,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:onClick="changeLanguage"
             android:text="Lenguage" />
 
         <Button
