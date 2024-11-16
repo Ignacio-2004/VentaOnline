@@ -11,7 +11,7 @@
     <string name="msgButtonPress">Added to the basket</string>
     <string name="ErrorAddBkt0">The amount of product is 0</string>
     <string name="homeBttTxt">Home</string>
-    <string name="lenguageBttTxt">Lenguage</string>
+    <string name="lenguageBttTxt">Español</string>
     <string name="offersBttTxt">Offers</string>
     <string name="basketBttTxt">Basket</string>
     <string name="hi_userTxt">Hi, User</string>
@@ -22,4 +22,14 @@
     <string name="LogInBttLogIn">Log In</string>
     <string name="LogInETxtName">Name</string>
     <string name="LogInETxtPasswor">Password</string>
+    <string name="LogInETxtExceptionMsg">Bouth files has to be writen</string>
+    <string name="LogInTxtExceptionEmpty">Missm,atch data</string>
+    <string name="BktTxtTu_cesta">Your basket</string>
+    <string name="BktBttclear">Clear</string>
+    <string name="BktBttbuy">Buy</string>
+    <string name="MsgEmptyBktBuy">Empty basket</string>
+    <string name="MsgBuyBkt">Purchase done</string>
+    <string name="txtUsr">Hi %s</string>
+    <string name="HiBktMsg">Your basket</string>
+    <string name="MsgBktClrEmpty">The basket is empty</string>
 </resources>

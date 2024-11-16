@@ -9,25 +9,29 @@ import android.content.res.Configuration;
 
 import com.dam2.ventaonline.R;
 
-import java.util.IllegalFormatCodePointException;
 import java.util.Locale;
 
 public class LenguageMng extends XMLMng{
 
-    Context c;
+    private final Context C;
+    private final XMLMng XMLMNGUSR;
 
     public LenguageMng(Context context,String name) {
-        super(context,name);
-        c = context;
+        super(context,name); /*XMLlanguage*/
+        C = context;
+        XMLMNGUSR = new XMLMng(C,C.getString(R.string.XMLusrprefPref)); /*XMLuser*/
     }
 
     /**
      * Get the code of the language
-     * @param def Default value
      * @return The content of teh XML
      */
-    public String getLng( String def){
-        return super.get(c.getString(R.string.languageXMLTag),def);
+    public String getLng(){
+
+        String user = XMLMNGUSR.get(C.getString(R.string.activeXMLTag),C.getString(R.string.DefNameUsr));
+
+        return super.get(user,"en");
+
     }
 
     /**
@@ -42,9 +46,9 @@ public class LenguageMng extends XMLMng{
         Configuration config = new Configuration();
         config.setLocale(locale);
 
-        c.getResources().updateConfiguration(config, c.getResources().getDisplayMetrics());
+        C.getResources().updateConfiguration(config, C.getResources().getDisplayMetrics());
 
-        super.set(c.getString(R.string.languageXMLTag),value);
+        super.set(XMLMNGUSR.get(C.getString(R.string.activeXMLTag),C.getString(R.string.DefNameUsr)),value);
 
         recreate(activity);
 
@@ -55,20 +59,20 @@ public class LenguageMng extends XMLMng{
      * Receive a code of language, in this case en,es to change the language and save in an XML
      * @param value Value of the XML tag
      * @param activity Name of the activity to recreate
-     * @param skip If is true you skip recreate
+     * @param skipRecreate If is true you skip recreate
      */
-    public void setLng( String value,Activity activity,boolean skip ){
+    public void setLng( String value,Activity activity,boolean skipRecreate ){
 
         Locale locale = new Locale(value);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.setLocale(locale);
 
-        c.getResources().updateConfiguration(config, c.getResources().getDisplayMetrics());
+        C.getResources().updateConfiguration(config, C.getResources().getDisplayMetrics());
 
-        super.set(c.getString(R.string.languageXMLTag),value);
+        super.set(XMLMNGUSR.get(C.getString(R.string.activeXMLTag),C.getString(R.string.DefNameUsr)),value);
 
-        if (!skip){
+        if (!skipRecreate){
             recreate(activity);
         }
 

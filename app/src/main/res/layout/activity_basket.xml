@@ -272,6 +272,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:onClick="buy"
             android:text="@string/BktBttbuy" />
     </LinearLayout>
 
@@ -289,7 +290,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/MainiTxtUser"
+            android:id="@+id/BsktTxtUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8px"
@@ -297,12 +298,32 @@
             android:text="@string/BktTxtTu_cesta"
             android:textSize="34sp" />
 
-        <Button
-            android:id="@+id/MainBttLog"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="408dp"
+        android:layout_height="47dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        tools:layout_editor_absoluteX="2dp">
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/BktBttlogin" />
+            android:text="Total"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textAlignment="viewEnd"
+            android:textSize="34sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

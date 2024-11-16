@@ -33,8 +33,13 @@
     <string name="LogInETxtExceptionMsg">Ambos campos tienen que estar completos</string>
     <string name="LogInTxtExceptionEmpty">Datos erronos</string>
     <string name="BktTxtTu_cesta">Tu cesta</string>
-    <string name="BktBttlogin">LogIn</string>
-    <string name="BktBtthome">Home</string>
     <string name="BktBttclear">Clear</string>
     <string name="BktBttbuy">Buy</string>
+    <string name="MsgEmptyBktBuy">Cesta vacia</string>
+    <string name="MsgBuyBkt">Compra realizada</string>
+    <string name="activeXMLTag" translatable="false">active</string>
+    <string name="txtUsr">Hola: %s</string>
+    <string name="DefNameUsr" translatable="false">Usuario</string>
+    <string name="HiBktMsg">Tu cesta</string>
+    <string name="MsgBktClrEmpty">La cesta esta vacia</string>
 </resources>

@@ -55,4 +55,14 @@ public class XMLMng {
         spe.putInt(tagName,content);
         spe.apply();
     }
+
+    /**
+     * Remove a tag
+     * @param tagName Name of the tag you want to remove
+     */
+    public void rmv(String tagName){
+
+        spe.remove(tagName);
+
+    }
 }

@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_LogIn">
+    tools:context=".logInLaunched">
 
     <TextView
         android:id="@+id/LogInTxtUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="200dp"
         android:text="@string/LogInTxtUser"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,30 +23,35 @@
         android:id="@+id/LogInTxtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="@string/LogInTxtPassword"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/LogInTxtUser"
         app:layout_constraintStart_toStartOf="@+id/LogInTxtUser"
-        tools:layout_editor_absoluteY="310dp" />
+        app:layout_constraintTop_toBottomOf="@+id/LogInETxtName" />
 
     <Button
         android:id="@+id/LogInBttLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:onClick="logInBttAct"
         android:text="@string/LogInBttLogIn"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="469dp" />
+        app:layout_constraintEnd_toEndOf="@+id/LogInETxtPassword"
+        app:layout_constraintStart_toStartOf="@+id/LogInETxtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/LogInETxtPassword" />
 
     <EditText
         android:id="@+id/LogInETxtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/LogInETxtName"
         android:inputType="text"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="217dp" />
+        app:layout_constraintEnd_toEndOf="@+id/LogInTxtUser"
+        app:layout_constraintStart_toStartOf="@+id/LogInTxtUser"
+        app:layout_constraintTop_toBottomOf="@+id/LogInTxtUser" />
 
     <EditText
         android:id="@+id/LogInETxtPassword"
@@ -59,4 +64,6 @@
         app:layout_constraintEnd_toEndOf="@+id/LogInTxtPassword"
         app:layout_constraintStart_toStartOf="@+id/LogInTxtPassword"
         app:layout_constraintTop_toBottomOf="@+id/LogInTxtPassword" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

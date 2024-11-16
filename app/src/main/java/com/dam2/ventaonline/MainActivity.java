@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtNum;
-    private TextView txtProd;
+    private TextView txt;
     private final ProductMng PM = new ProductMng();
     private XMLMng xmlMngBkst;
     private LenguageMng lm;
@@ -34,21 +34,20 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
 
         lm = new LenguageMng(this,getString(R.string.languageXMLName));
+        xmlMngUsr = new XMLMng(this,getString(R.string.XMLusrprefPref));
 
-        lm.setLng(lm.getLng("es"),this,true);
+        lm.setLng(lm.getLng(),this,true);
 
         setContentView(R.layout.activity_main);
+        setUsr();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.MainBttOffe), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        xmlMngUsr = new XMLMng(this,getString(R.string.XMLusrprefPref));
-        xmlMngBkst = new XMLMng(this,getString(R.string.basketcontentXML));
 
-        /*Init Usr*/
-        initUsr();
+        xmlMngBkst = new XMLMng(this,getString(R.string.basketcontentXML));
 
         /*Initialise the view of amount of products to add*/
         textAmount("0");
@@ -130,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeLanguage(View view){
 
-        if (lm.getLng("es").equals("es")){
+        if (lm.getLng().equals("es")){
 
             lm.setLng("en",this);
 
@@ -146,26 +145,26 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Product>products = PM.listProducts();
 
-        txtProd= findViewById(R.id.MainTxtProd1);
-        txtProd.setText(products.get(0).getName()+" ("+products.get(0).getCost()+getString(R.string.moneyIcon)+" )");
+        txt = findViewById(R.id.MainTxtProd1);
+        txt.setText(products.get(0).getName()+" ("+products.get(0).getCost()+getString(R.string.moneyIcon)+" )");
 
-        txtProd= findViewById(R.id.MainTxtProd2);
-        txtProd.setText(products.get(1).getName()+" ("+products.get(1).getCost()+getString(R.string.moneyIcon)+" )");
+        txt = findViewById(R.id.MainTxtProd2);
+        txt.setText(products.get(1).getName()+" ("+products.get(1).getCost()+getString(R.string.moneyIcon)+" )");
 
-        txtProd= findViewById(R.id.MainTxtProd3);
-        txtProd.setText(products.get(2).getName()+" ("+products.get(2).getCost()+getString(R.string.moneyIcon)+" )");
+        txt = findViewById(R.id.MainTxtProd3);
+        txt.setText(products.get(2).getName()+" ("+products.get(2).getCost()+getString(R.string.moneyIcon)+" )");
 
-        txtProd= findViewById(R.id.MainTxtProd4);
-        txtProd.setText(products.get(3).getName()+" ("+products.get(3).getCost()+getString(R.string.moneyIcon)+" )");
+        txt = findViewById(R.id.MainTxtProd4);
+        txt.setText(products.get(3).getName()+" ("+products.get(3).getCost()+getString(R.string.moneyIcon)+" )");
 
-        txtProd= findViewById(R.id.MainTxtProd5);
-        txtProd.setText(products.get(4).getName()+" ("+products.get(4).getCost()+getString(R.string.moneyIcon)+" )");
+        txt = findViewById(R.id.MainTxtProd5);
+        txt.setText(products.get(4).getName()+" ("+products.get(4).getCost()+getString(R.string.moneyIcon)+" )");
 
-        txtProd= findViewById(R.id.MainTxtProd6);
-        txtProd.setText(products.get(5).getName()+" ("+products.get(5).getCost()+getString(R.string.moneyIcon)+" )");
+        txt = findViewById(R.id.MainTxtProd6);
+        txt.setText(products.get(5).getName()+" ("+products.get(5).getCost()+getString(R.string.moneyIcon)+" )");
 
-        txtProd= findViewById(R.id.MainTxtProd7);
-        txtProd.setText(products.get(6).getName()+" ("+products.get(6).getCost()+getString(R.string.moneyIcon)+" )");
+        txt = findViewById(R.id.MainTxtProd7);
+        txt.setText(products.get(6).getName()+" ("+products.get(6).getCost()+getString(R.string.moneyIcon)+" )");
 
     }
 
@@ -179,10 +178,13 @@ public class MainActivity extends AppCompatActivity {
         return (String) txtNum.getText();
     }
 
-    private void initUsr(){
+    private void   setUsr(){
 
-        xmlMngUsr.set("nacho","12345");
-        xmlMngUsr.set("alberto","67890");
+        String user = xmlMngUsr.get(getString(R.string.activeXMLTag),getString(R.string.DefNameUsr));
+
+        txt = findViewById(R.id.MainTxtUser);
+
+        txt.setText(getString(R.string.txtUsr,user.toLowerCase()));
 
     }
 

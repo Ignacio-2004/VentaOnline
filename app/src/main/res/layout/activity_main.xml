@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/MainiTxtUser"
+            android:id="@+id/MainTxtUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8px"
@@ -80,12 +80,6 @@
             android:text="@string/hi_userTxt"
             android:textSize="34sp" />
 
-        <Button
-            android:id="@+id/MainBttLog"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/loginBttTxt" />
     </LinearLayout>
 
     <TableLayout

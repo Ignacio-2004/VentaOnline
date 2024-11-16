@@ -1,9 +1,13 @@
 package com.dam2.ventaonline;
 
+import static com.dam2.ventaonline.R.*;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +15,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.dam2.ventaonline.exception.EmptyTxtException;
 import com.dam2.ventaonline.managers.LenguageMng;
 import com.dam2.ventaonline.managers.ProductMng;
 import com.dam2.ventaonline.managers.XMLMng;
 import com.dam2.ventaonline.objects.Product;
 
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 
 public class Basket extends AppCompatActivity {
 
@@ -24,6 +30,8 @@ public class Basket extends AppCompatActivity {
     private ProductMng pm = new ProductMng();
     private XMLMng xmlMng ;
     private LenguageMng lm;
+    private XMLMng xmlMngUsr;
+    private TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +40,8 @@ public class Basket extends AppCompatActivity {
 
         lm = new LenguageMng(this,getString(R.string.languageXMLName));
 
-        lm.setLng(lm.getLng("es"),this,true);
+        lm.setLng(lm.getLng(),this,true);
+        xmlMngUsr = new XMLMng(this,getString(R.string.XMLusrprefPref));
 
         setContentView(R.layout.activity_basket);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -55,6 +64,7 @@ public class Basket extends AppCompatActivity {
 
         initProdTxt();
         initAmountProd();
+        initBktMsg();
     }
 
     public void home (View view){
@@ -66,35 +76,70 @@ public class Basket extends AppCompatActivity {
     }
 
     public void clear (View view){
-        ArrayList<Product> products = pm.listProducts();
 
-        txtProd= findViewById(R.id.BktAmount1);
-        txtProd.setText("0");
-        xmlMng.set(products.get(0).getId(),"0");
+        if(!isEmpty()){
 
-        txtProd= findViewById(R.id.BktAmount2);
-        txtProd.setText("0");
-        xmlMng.set(products.get(1).getId(),"0");
+            rstAmountProd();
 
-        txtProd= findViewById(R.id.BktAmount3);
-        txtProd.setText("0");
-        xmlMng.set(products.get(2).getId(),"0");
+        }else{
 
-        txtProd= findViewById(R.id.BktAmount4);
-        txtProd.setText("0");
-        xmlMng.set(products.get(3).getId(),"0");
+            Toast.makeText(this, getString(string.MsgBktClrEmpty),Toast.LENGTH_SHORT).show();
 
-        txtProd= findViewById(R.id.BktAmount5);
-        txtProd.setText("0");
-        xmlMng.set(products.get(4).getId(),"0");
+        }
 
-        txtProd= findViewById(R.id.BktAmount6);
-        txtProd.setText("0");
-        xmlMng.set(products.get(5).getId(),"0");
+    }
 
-        txtProd= findViewById(R.id.BktAmount7);
-        txtProd.setText("0");
-        xmlMng.set(products.get(6).getId(),"0");
+    public void changeLanguage(View view){
+
+        if (lm.getLng().equals("es")){
+
+            lm.setLng("en",this);
+
+        }else{
+
+            lm.setLng("es",this);
+
+        }
+
+    }
+
+    public void buy(View view){
+
+        int amount = 0;
+
+        txtProd = findViewById(R.id.BktAmount1);
+        amount+=Integer.parseInt(txtProd.getText().toString());
+
+        txtProd = findViewById(R.id.BktAmount2);
+        amount+=Integer.parseInt(txtProd.getText().toString());
+
+        txtProd = findViewById(R.id.BktAmount3);
+        amount+=Integer.parseInt(txtProd.getText().toString());
+
+        txtProd = findViewById(R.id.BktAmount4);
+        amount+=Integer.parseInt(txtProd.getText().toString());
+
+        txtProd = findViewById(R.id.BktAmount5);
+        amount+=Integer.parseInt(txtProd.getText().toString());
+
+        txtProd = findViewById(R.id.BktAmount6);
+        amount+=Integer.parseInt(txtProd.getText().toString());
+
+        txtProd = findViewById(R.id.BktAmount7);
+        amount+=Integer.parseInt(txtProd.getText().toString());
+
+        try{
+            if (amount==0){
+                throw new EmptyTxtException();
+            }
+
+            rstAmountProd();
+
+            Toast.makeText(this, getString(R.string.MsgBuyBkt),Toast.LENGTH_LONG).show();
+
+        }catch (EmptyTxtException ete){
+            Toast.makeText(this, getString(R.string.MsgEmptyBktBuy) ,Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -152,17 +197,73 @@ public class Basket extends AppCompatActivity {
 
     }
 
-    public void changeLanguage(View view){
+    private void rstAmountProd (){
+        ArrayList<Product> products = pm.listProducts();
 
-        if (lm.getLng("es").equals("es")){
+        txtProd= findViewById(R.id.BktAmount1);
+        txtProd.setText("0");
+        xmlMng.set(products.get(0).getId(),"0");
 
-            lm.setLng("en",this);
+        txtProd= findViewById(R.id.BktAmount2);
+        txtProd.setText("0");
+        xmlMng.set(products.get(1).getId(),"0");
 
-        }else{
+        txtProd= findViewById(R.id.BktAmount3);
+        txtProd.setText("0");
+        xmlMng.set(products.get(2).getId(),"0");
 
-            lm.setLng("es",this);
+        txtProd= findViewById(R.id.BktAmount4);
+        txtProd.setText("0");
+        xmlMng.set(products.get(3).getId(),"0");
 
-        }
+        txtProd= findViewById(R.id.BktAmount5);
+        txtProd.setText("0");
+        xmlMng.set(products.get(4).getId(),"0");
+
+        txtProd= findViewById(R.id.BktAmount6);
+        txtProd.setText("0");
+        xmlMng.set(products.get(5).getId(),"0");
+
+        txtProd= findViewById(R.id.BktAmount7);
+        txtProd.setText("0");
+        xmlMng.set(products.get(6).getId(),"0");
+    }
+
+    private void initBktMsg(){
+
+        txt = findViewById(R.id.BsktTxtUser);
+
+        txt.setText(string.HiBktMsg);
 
     }
+
+    private boolean isEmpty(){
+
+        ArrayList<Product> products = pm.listProducts();
+
+        txtProd= findViewById(R.id.BktAmount1);
+        if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
+
+        txtProd= findViewById(R.id.BktAmount2);
+        if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
+
+        txtProd= findViewById(R.id.BktAmount3);
+        if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
+
+        txtProd= findViewById(R.id.BktAmount4);
+        if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
+
+        txtProd= findViewById(R.id.BktAmount5);
+        if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
+
+        txtProd= findViewById(R.id.BktAmount6);
+        if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
+
+        txtProd= findViewById(R.id.BktAmount7);
+        if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
+
+
+        return true;
+    }
+
 }
