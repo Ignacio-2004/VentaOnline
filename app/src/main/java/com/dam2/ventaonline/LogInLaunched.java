@@ -15,12 +15,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.dam2.ventaonline.exception.EmptyTxtException;
 import com.dam2.ventaonline.exception.MismatchTxtException;
-import com.dam2.ventaonline.managers.LenguageMng;
 import com.dam2.ventaonline.managers.XMLMng;
 
 import java.util.Locale;
 
-public class logInLaunched extends AppCompatActivity {
+public class LogInLaunched extends AppCompatActivity {
 
     private XMLMng xmlMngUsr;
     private TextView txtUsr;

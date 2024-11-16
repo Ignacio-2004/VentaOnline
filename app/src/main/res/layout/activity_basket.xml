@@ -312,14 +312,17 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="15px"
             android:layout_weight="1"
             android:text="Total"
+            android:textAlignment="viewEnd"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/BktTotalCost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15px"
             android:layout_weight="1"
             android:text="0"
             android:textAlignment="viewEnd"

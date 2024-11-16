@@ -30,8 +30,8 @@ public class Basket extends AppCompatActivity {
     private ProductMng pm = new ProductMng();
     private XMLMng xmlMng ;
     private LenguageMng lm;
-    private XMLMng xmlMngUsr;
     private TextView txt;
+    private ArrayList<Product> products;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,6 @@ public class Basket extends AppCompatActivity {
         lm = new LenguageMng(this,getString(R.string.languageXMLName));
 
         lm.setLng(lm.getLng(),this,true);
-        xmlMngUsr = new XMLMng(this,getString(R.string.XMLusrprefPref));
 
         setContentView(R.layout.activity_basket);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -62,9 +61,12 @@ public class Basket extends AppCompatActivity {
         pm.addProduct( new Product("PW00001",getString(R.string.preworkout_monstrack),45.00));
         pm.addProduct( new Product("PW00006",getString(R.string.preworkout_black_blood),30.99));
 
+        products = pm.listProducts();
+
         initProdTxt();
         initAmountProd();
         initBktMsg();
+
     }
 
     public void home (View view){
@@ -145,8 +147,6 @@ public class Basket extends AppCompatActivity {
 
     private void initProdTxt(){
 
-        ArrayList<Product> products = pm.listProducts();
-
         txtProd= findViewById(R.id.BktTxtProd1);
         txtProd.setText(products.get(0).getName()+" ("+products.get(0).getCost()+getString(R.string.moneyIcon)+" )");
 
@@ -170,35 +170,66 @@ public class Basket extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void initAmountProd(){
 
-        ArrayList<Product> products = pm.listProducts();
+        TextView tc = findViewById(id.BktTotalCost);
 
         txtProd= findViewById(R.id.BktAmount1);
         txtProd.setText(xmlMng.get(products.get(0).getId(),"0"));
 
+        double atv = Double.parseDouble(tc.getText().toString());
+        int ap = Integer.parseInt(xmlMng.get(products.get(0).getId(),"0"));
+        double cp = products.get(0).getCost();
+        tc.setText(String.valueOf(atv+(ap*cp)).trim());
+
         txtProd= findViewById(R.id.BktAmount2);
         txtProd.setText(xmlMng.get(products.get(1).getId(),"0"));
+        atv = Double.parseDouble(tc.getText().toString());
+        ap = Integer.parseInt(xmlMng.get(products.get(1).getId(),"0"));
+        cp = products.get(1).getCost();
+        tc.setText(String.valueOf(atv+(ap*cp)).trim());
 
         txtProd= findViewById(R.id.BktAmount3);
         txtProd.setText(xmlMng.get(products.get(2).getId(),"0"));
+        atv = Double.parseDouble(tc.getText().toString());
+        ap = Integer.parseInt(xmlMng.get(products.get(2).getId(),"0"));
+        cp = products.get(2).getCost();
+        tc.setText(String.valueOf(atv+(ap*cp)).trim());
 
         txtProd= findViewById(R.id.BktAmount4);
         txtProd.setText(xmlMng.get(products.get(3).getId(),"0"));
+        atv = Double.parseDouble(tc.getText().toString());
+        ap = Integer.parseInt(xmlMng.get(products.get(3).getId(),"0"));
+        cp = products.get(3).getCost();
+        tc.setText(String.valueOf(atv+(ap*cp)).trim());
 
         txtProd= findViewById(R.id.BktAmount5);
         txtProd.setText(xmlMng.get(products.get(4).getId(),"0"));
+        atv = Double.parseDouble(tc.getText().toString());
+        ap = Integer.parseInt(xmlMng.get(products.get(4).getId(),"0"));
+        cp = products.get(4).getCost();
+        tc.setText(String.valueOf(atv+(ap*cp)).trim());
 
         txtProd= findViewById(R.id.BktAmount6);
         txtProd.setText(xmlMng.get(products.get(5).getId(),"0"));
+        atv = Double.parseDouble(tc.getText().toString());
+        ap = Integer.parseInt(xmlMng.get(products.get(5).getId(),"0"));
+        cp = products.get(5).getCost();
+        tc.setText(String.valueOf(atv+(ap*cp)).trim());
 
         txtProd= findViewById(R.id.BktAmount7);
         txtProd.setText(xmlMng.get(products.get(6).getId(),"0"));
+        atv = Double.parseDouble(tc.getText().toString());
+        ap = Integer.parseInt(xmlMng.get(products.get(6).getId(),"0"));
+        cp = products.get(6).getCost();
+        tc.setText(String.valueOf(atv+(ap*cp)).trim());
+
+        tc.setText(tc.getText()+getString(R.string.moneyIcon));
 
     }
 
     private void rstAmountProd (){
-        ArrayList<Product> products = pm.listProducts();
 
         txtProd= findViewById(R.id.BktAmount1);
         txtProd.setText("0");
@@ -227,6 +258,10 @@ public class Basket extends AppCompatActivity {
         txtProd= findViewById(R.id.BktAmount7);
         txtProd.setText("0");
         xmlMng.set(products.get(6).getId(),"0");
+
+        TextView tc = findViewById(id.BktTotalCost);
+        tc.setText("0");
+
     }
 
     private void initBktMsg(){
@@ -238,8 +273,6 @@ public class Basket extends AppCompatActivity {
     }
 
     private boolean isEmpty(){
-
-        ArrayList<Product> products = pm.listProducts();
 
         txtProd= findViewById(R.id.BktAmount1);
         if(Integer.parseInt(String.valueOf(txtProd.getText()))!=0)  return false;
