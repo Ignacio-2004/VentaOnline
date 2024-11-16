@@ -5,6 +5,7 @@
     android:id="@+id/MainBttOffe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDE7F6"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -26,6 +27,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:text="@string/homeBttTxt" />
 
         <Button
@@ -35,6 +37,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:onClick="changeLanguage"
             android:text="@string/lenguageBttTxt" />
 
@@ -45,6 +48,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:text="@string/offersBttTxt" />
 
         <Button
@@ -54,6 +58,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:onClick="initBasket"
             android:text="@string/basketBttTxt" />
     </LinearLayout>
@@ -78,7 +83,9 @@
             android:layout_marginLeft="8px"
             android:layout_weight="3"
             android:text="@string/hi_userTxt"
-            android:textSize="34sp" />
+            android:textColor="#5E35B1"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -107,7 +114,9 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="@string/productTxt"
-                android:textSize="20sp" />
+                android:textColor="#5E35B1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MainBttAdd1"
@@ -116,8 +125,10 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
+                android:backgroundTint="#424242"
                 android:onClick="addBkt"
-                android:text="@string/addBttXml" />
+                android:text="@string/addBttXml"
+                android:textColor="#FFFFFF" />
 
         </TableRow>
 
@@ -135,7 +146,9 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="@string/productTxt"
-                android:textSize="20sp" />
+                android:textColor="#5E35B1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MainBttAdd2"
@@ -144,8 +157,10 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
+                android:backgroundTint="#424242"
                 android:onClick="addBkt"
-                android:text="@string/addBttXml" />
+                android:text="@string/addBttXml"
+                android:textColor="#FFFFFF" />
         </TableRow>
 
         <TableRow
@@ -162,7 +177,9 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="@string/productTxt"
-                android:textSize="20sp" />
+                android:textColor="#5E35B1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MainBttAdd3"
@@ -171,8 +188,10 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
+                android:backgroundTint="#424242"
                 android:onClick="addBkt"
-                android:text="@string/addBttXml" />
+                android:text="@string/addBttXml"
+                android:textColor="#FFFFFF" />
 
         </TableRow>
 
@@ -190,7 +209,9 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="@string/productTxt"
-                android:textSize="20sp" />
+                android:textColor="#5E35B1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MainBttAdd4"
@@ -199,8 +220,10 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
+                android:backgroundTint="#424242"
                 android:onClick="addBkt"
-                android:text="@string/addBttXml" />
+                android:text="@string/addBttXml"
+                android:textColor="#FFFFFF" />
 
         </TableRow>
 
@@ -218,7 +241,9 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="@string/productTxt"
-                android:textSize="20sp" />
+                android:textColor="#5E35B1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MainBttAdd5"
@@ -227,8 +252,10 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
+                android:backgroundTint="#424242"
                 android:onClick="addBkt"
-                android:text="@string/addBttXml" />
+                android:text="@string/addBttXml"
+                android:textColor="#FFFFFF" />
 
         </TableRow>
 
@@ -246,7 +273,9 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="@string/productTxt"
-                android:textSize="20sp" />
+                android:textColor="#5E35B1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MainBttAdd6"
@@ -255,8 +284,10 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
+                android:backgroundTint="#424242"
                 android:onClick="addBkt"
-                android:text="@string/addBttXml" />
+                android:text="@string/addBttXml"
+                android:textColor="#FFFFFF" />
         </TableRow>
 
         <TableRow
@@ -273,7 +304,9 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="@string/productTxt"
-                android:textSize="20sp" />
+                android:textColor="#5E35B1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/MainBttAdd7"
@@ -282,8 +315,10 @@
                 android:layout_marginLeft="4px"
                 android:layout_marginRight="4px"
                 android:layout_weight="2"
+                android:backgroundTint="#424242"
                 android:onClick="addBkt"
-                android:text="@string/addBttXml" />
+                android:text="@string/addBttXml"
+                android:textColor="#FFFFFF" />
 
         </TableRow>
 
@@ -310,7 +345,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:text="@string/ceroTxt"
-                android:textSize="34sp" />
+                android:textColor="#5E35B1"
+                android:textSize="34sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
@@ -323,8 +360,10 @@
                 android:layout_height="match_parent"
                 android:layout_span="1"
                 android:layout_weight="1"
+                android:backgroundTint="#5E35B1"
                 android:onClick="substr"
                 android:text="@string/subsAmount"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
             <Button
@@ -333,8 +372,10 @@
                 android:layout_height="match_parent"
                 android:layout_span="1"
                 android:layout_weight="1"
+                android:backgroundTint="#5E35B1"
                 android:onClick="plus"
                 android:text="@string/plusAmount"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp" />
         </TableRow>
     </TableLayout>

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDE7F6"
     tools:context=".LogInLaunched">
 
     <TextView
@@ -12,8 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
+        android:backgroundTint="#5E35B1"
         android:text="@string/LogInTxtUser"
+        android:textColor="#5E35B1"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,8 +28,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:backgroundTint="#5E35B1"
         android:text="@string/LogInTxtPassword"
+        android:textColor="#5E35B1"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/LogInTxtUser"
         app:layout_constraintStart_toStartOf="@+id/LogInTxtUser"
         app:layout_constraintTop_toBottomOf="@+id/LogInETxtName" />
@@ -35,8 +42,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:backgroundTint="#5E35B1"
         android:onClick="logInBttAct"
         android:text="@string/LogInBttLogIn"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/LogInETxtPassword"
         app:layout_constraintStart_toStartOf="@+id/LogInETxtPassword"
         app:layout_constraintTop_toBottomOf="@+id/LogInETxtPassword" />
@@ -49,6 +58,7 @@
         android:ems="10"
         android:hint="@string/LogInETxtName"
         android:inputType="text"
+        android:textColor="#424242"
         app:layout_constraintEnd_toEndOf="@+id/LogInTxtUser"
         app:layout_constraintStart_toStartOf="@+id/LogInTxtUser"
         app:layout_constraintTop_toBottomOf="@+id/LogInTxtUser" />
@@ -61,6 +71,7 @@
         android:ems="10"
         android:hint="@string/LogInETxtPasswor"
         android:inputType="textPassword"
+        android:textColor="#424242"
         app:layout_constraintEnd_toEndOf="@+id/LogInTxtPassword"
         app:layout_constraintStart_toStartOf="@+id/LogInTxtPassword"
         app:layout_constraintTop_toBottomOf="@+id/LogInTxtPassword" />

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EDE7F6"
     tools:context=".Basket">
 
     <TableLayout
@@ -32,6 +33,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
+                android:textColor="#5E35B1"
                 android:textSize="20sp" />
 
             <TextView
@@ -43,6 +45,7 @@
                 android:layout_weight="2"
                 android:text="0"
                 android:textAlignment="viewEnd"
+                android:textColor="#424242"
                 android:textSize="34sp" />
 
         </TableRow>
@@ -61,6 +64,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
+                android:textColor="#5E35B1"
                 android:textSize="20sp" />
 
             <TextView
@@ -72,6 +76,7 @@
                 android:layout_weight="2"
                 android:text="0"
                 android:textAlignment="viewEnd"
+                android:textColor="#424242"
                 android:textSize="34sp" />
 
         </TableRow>
@@ -90,6 +95,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
+                android:textColor="#5E35B1"
                 android:textSize="20sp" />
 
             <TextView
@@ -101,6 +107,7 @@
                 android:layout_weight="2"
                 android:text="0"
                 android:textAlignment="viewEnd"
+                android:textColor="#424242"
                 android:textSize="34sp" />
 
         </TableRow>
@@ -119,6 +126,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
+                android:textColor="#5E35B1"
                 android:textSize="20sp" />
 
             <TextView
@@ -130,6 +138,7 @@
                 android:layout_weight="2"
                 android:text="0"
                 android:textAlignment="viewEnd"
+                android:textColor="#424242"
                 android:textSize="34sp" />
 
         </TableRow>
@@ -148,6 +157,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
+                android:textColor="#5E35B1"
                 android:textSize="20sp" />
 
             <TextView
@@ -159,6 +169,7 @@
                 android:layout_weight="2"
                 android:text="0"
                 android:textAlignment="viewEnd"
+                android:textColor="#424242"
                 android:textSize="34sp" />
 
         </TableRow>
@@ -177,6 +188,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
+                android:textColor="#5E35B1"
                 android:textSize="20sp" />
 
             <TextView
@@ -188,6 +200,7 @@
                 android:layout_weight="2"
                 android:text="0"
                 android:textAlignment="viewEnd"
+                android:textColor="#424242"
                 android:textSize="34sp" />
 
         </TableRow>
@@ -206,6 +219,7 @@
                 android:layout_marginRight="4px"
                 android:layout_weight="4"
                 android:text="Product"
+                android:textColor="#5E35B1"
                 android:textSize="20sp" />
 
             <TextView
@@ -217,6 +231,7 @@
                 android:layout_weight="2"
                 android:text="0"
                 android:textAlignment="viewEnd"
+                android:textColor="#424242"
                 android:textSize="34sp" />
 
         </TableRow>
@@ -242,8 +257,9 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:onClick="home"
-            android:text="@string/homeBttTxt"  />
+            android:text="@string/homeBttTxt" />
 
         <Button
             android:id="@+id/MainBttLan"
@@ -252,6 +268,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:onClick="changeLanguage"
             android:text="@string/lenguageBttTxt" />
 
@@ -262,6 +279,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:onClick="clear"
             android:text="@string/BktBttclear" />
 
@@ -272,6 +290,7 @@
             android:layout_marginLeft="4px"
             android:layout_marginEnd="4px"
             android:layout_weight="1"
+            android:backgroundTint="#424242"
             android:onClick="buy"
             android:text="@string/BktBttbuy" />
     </LinearLayout>
@@ -296,6 +315,7 @@
             android:layout_marginLeft="8px"
             android:layout_weight="3"
             android:text="@string/BktTxtTu_cesta"
+            android:textColor="#5E35B1"
             android:textSize="34sp" />
 
     </LinearLayout>
@@ -305,8 +325,9 @@
         android:layout_height="47dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        tools:layout_editor_absoluteX="2dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
 
         <TextView
             android:id="@+id/textView"
@@ -316,6 +337,7 @@
             android:layout_weight="1"
             android:text="Total"
             android:textAlignment="viewEnd"
+            android:textColor="#5E35B1"
             android:textSize="20sp" />
 
         <TextView
@@ -326,6 +348,7 @@
             android:layout_weight="1"
             android:text="0"
             android:textAlignment="viewEnd"
+            android:textColor="#424242"
             android:textSize="34sp" />
     </LinearLayout>
 
