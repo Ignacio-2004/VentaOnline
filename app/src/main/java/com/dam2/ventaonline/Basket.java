@@ -4,6 +4,11 @@ import static com.dam2.ventaonline.R.*;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -24,7 +29,7 @@ import com.dam2.ventaonline.objects.Product;
 import java.util.ArrayList;
 import java.util.IllegalFormatCodePointException;
 
-public class Basket extends AppCompatActivity {
+public class Basket extends AppCompatActivity implements SensorEventListener {
 
     private TextView txtProd;
     private ProductMng pm = new ProductMng();
@@ -32,6 +37,9 @@ public class Basket extends AppCompatActivity {
     private LenguageMng lm;
     private TextView txt;
     private ArrayList<Product> products;
+
+    private SensorManager sensorManager;
+    private Sensor lightSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +57,8 @@ public class Basket extends AppCompatActivity {
             return insets;
         });
 
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         xmlMng = new XMLMng(this,getString(R.string.basketcontentXML));
 
         /*Initialise the products*/
@@ -71,7 +81,7 @@ public class Basket extends AppCompatActivity {
 
     public void home (View view){
 
-        Intent i = new Intent();
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
 
@@ -299,4 +309,39 @@ public class Basket extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        if (sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT) {
+
+            float lightValue = sensorEvent.values[0];
+
+            if (lightValue < 10) {
+
+                findViewById(R.id.main).setBackgroundColor(Color.BLACK);
+
+            } else {
+
+                findViewById(R.id.main).setBackgroundColor(Color.WHITE);
+
+            }
+
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {}
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (sensorManager != null && lightSensor != null) {
+            sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
+    }
 }

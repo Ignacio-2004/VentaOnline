@@ -1,6 +1,12 @@
 package com.dam2.ventaonline;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -8,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -16,10 +23,11 @@ import com.dam2.ventaonline.managers.LenguageMng;
 import com.dam2.ventaonline.managers.ProductMng;
 import com.dam2.ventaonline.managers.XMLMng;
 import com.dam2.ventaonline.objects.Product;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
     private TextView txtNum;
     private TextView txt;
@@ -27,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private XMLMng xmlMngBkst;
     private LenguageMng lm;
     private XMLMng xmlMngUsr;
+
+    private SensorManager sensorManager;
+    private Sensor lightSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
         xmlMngBkst = new XMLMng(this,getString(R.string.basketcontentXML));
 
@@ -65,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         initProdTxt();
 
     }
+
 
     public void plus(View view){
 
@@ -124,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i = new Intent(this,Basket.class);
         startActivity(i);
+        finish();
 
     }
 
@@ -188,4 +203,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        if (sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT) {
+
+            float lightValue = sensorEvent.values[0];
+
+            if (lightValue < 10) {
+
+                findViewById(R.id.MainBttOffe).setBackgroundColor(Color.BLACK);
+
+            } else {
+
+                findViewById(R.id.MainBttOffe).setBackgroundColor(Color.WHITE);
+
+            }
+
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {}
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (sensorManager != null && lightSensor != null) {
+            sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
+    }
 }

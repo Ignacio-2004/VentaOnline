@@ -2,6 +2,11 @@ package com.dam2.ventaonline;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -19,12 +24,14 @@ import com.dam2.ventaonline.managers.XMLMng;
 
 import java.util.Locale;
 
-public class LogInLaunched extends AppCompatActivity {
+public class LogInLaunched extends AppCompatActivity implements SensorEventListener {
 
     private XMLMng xmlMngUsr;
     private TextView txtUsr;
     private TextView txtPass;
 
+    private SensorManager sensorManager;
+    private Sensor lightSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,9 @@ public class LogInLaunched extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
 
         xmlMngUsr = new XMLMng(this,getString(R.string.XMLusrprefPref));
 
@@ -98,5 +108,41 @@ public class LogInLaunched extends AppCompatActivity {
         xmlMngUsr.set("nacho","12345");
         xmlMngUsr.set("alberto","67890");
 
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        if (sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT) {
+
+            float lightValue = sensorEvent.values[0];
+
+            if (lightValue < 10) {
+
+                findViewById(R.id.main).setBackgroundColor(Color.BLACK);
+
+            } else {
+
+                findViewById(R.id.main).setBackgroundColor(Color.WHITE);
+
+            }
+
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {}
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (sensorManager != null && lightSensor != null) {
+            sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
     }
 }
